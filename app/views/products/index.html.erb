@@ -1,0 +1,35 @@
+<h1>Listing products</h1>
+
+<table class="zebra">
+<thead>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Image url</th>
+    <th>Price</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+<% @products.each do |product| %>
+  <tr>
+    <td><%= product.title %></td>
+    <td><%= product.description %></td>
+    <td><%= product.image_url %></td>
+    <td><%= product.price %></td>
+    <td>
+		<ul class="unstyled">
+			<li><%= link_to 'Show', product %></li>
+			<li><%= link_to 'Edit', edit_product_path(product) %></li>
+			<li><%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></li>
+		</ul>
+	</td>
+  </tr>
+<% end %>
+</tbody>
+
+</table>
+
+<br />
+
+<%= link_to 'New Product', new_product_path %>
