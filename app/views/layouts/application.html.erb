@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Depot</title>
-  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<div class="container">
-	<%= yield %>
-</div>
-</body>
+	<head>
+		<title>Pragprog Books Online Store</title>
+		<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+		<%= stylesheet_link_tag "application" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tag %>
+	</head>
+	<body class="<%= controller.controller_name %>">
+		<div class="container">
+			<div id="banner">
+				<%= image_tag("http://placehold.it/200x100") %>
+				<%= @page_title || "Pragmatic Bookshelf" %>
+			</div>
+		</div>
+		<div class="container">
+		<div id="columns" class="row">
+			<div id="side" class="span4">
+				<ul>
+					<li>
+						<a href="http://www....">Home</a>
+					</li>
+					<li>
+						<a href="http://www..../faq">Questions</a>
+					</li>
+					<li>
+						<a href="http://www..../news">News</a>
+					</li>
+					<li>
+						<a href="http://www..../contact">Contact</a>
+					</li>
+				</ul>
+			</div>
+			<div id="main" class="span12">
+				<%= yield %>
+			</div>
+		</div>
+		</div>
+	</body>
 </html>
