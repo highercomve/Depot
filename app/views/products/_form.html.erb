@@ -1,6 +1,6 @@
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="alert-message block-message error">
       <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
       <ul>
@@ -28,6 +28,6 @@
     <%= f.text_field :price %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit(nil,{:class=>'btn primary'}) %>
   </div>
 <% end %>
