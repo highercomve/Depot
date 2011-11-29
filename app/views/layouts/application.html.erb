@@ -9,9 +9,13 @@
 	</head>
 	<body class="<%= controller.controller_name %>">
 		<div class="container">
-			<div id="banner">
-				<%= image_tag("http://placehold.it/200x100") %>
-				<%= @page_title || "Pragmatic Bookshelf" %>
+			<div id="banner" class="row">
+				<div class="span4">
+					<%= image_tag("http://placehold.it/200x100") %>
+				</div>
+				<div id="page_title" class="span12">				
+					<%= @page_title || "EscuelaWeb Shop Cart" %>
+				</div>			
 			</div>
 		</div>
 		<div class="container">
@@ -22,13 +26,7 @@
 						<%=link_to 'Home', '/' %>
 					</li>
 					<li>
-						<a href="http://www..../faq">Questions</a>
-					</li>
-					<li>
-						<a href="http://www..../news">News</a>
-					</li>
-					<li>
-						<a href="http://www..../contact">Contact</a>
+						<%=link_to 'Products', products_path() %>
 					</li>
 				</ul>
 			</div>
