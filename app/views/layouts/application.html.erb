@@ -20,7 +20,10 @@
 		</div>
 		<div class="container">
 		<div id="columns" class="row">
-			<div id="side" class="span4">
+			<div id="side" class="span5">
+				<div id="cart">
+					<%= render @cart %>
+				</div>
 				<ul>
 					<li>
 						<%=link_to 'Home', '/' %>
@@ -30,7 +33,7 @@
 					</li>
 				</ul>
 			</div>
-			<div id="main" class="span12">
+			<div id="main" class="span11">
 				<%= yield %>
 			</div>
 		</div>

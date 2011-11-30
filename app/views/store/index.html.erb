@@ -10,12 +10,12 @@
 	<div class="span4">
  		<%= image_tag(product.image_url) %>
 	</div>
-	<div class="span8">
+	<div class="span7">
 	 	<h3> <%= product.title %> </h3>
 	 	<%= sanitize(product.description) %>
 	 	<div class="price_line" >
 	 		<span class="price" > <%= number_to_currency(product.price) %> </span>
-	 		<%=button_to 'Add to Cart', line_items_path(product_id: product),{:class=>'btn primary'} %>
+	 		<%=button_to 'Add to Cart', line_items_path(product_id: product),{:remote=>true,:class=>'btn primary'} %>
 		</div>
 	</div>
  </div>
