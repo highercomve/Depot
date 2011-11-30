@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pragprog Books Online Store</title>
+		<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+		<%= stylesheet_link_tag "application" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tag %>
+	</head>
+	<body class="<%= controller.controller_name %>">
+		<div class="container">
+			<div id="banner" class="row">
+				<div class="span4">
+					<%= image_tag("http://placehold.it/200x100") %>
+				</div>
+				<div id="page_title" class="span12">				
+					<%= @page_title || "EscuelaWeb Shop Cart" %>
+				</div>			
+			</div>
+		</div>
+		<div class="container">
+		<div id="columns" class="row">
+			<div id="side" class="span4">
+				<ul>
+					<li>
+						<%=link_to 'Home', '/' %>
+					</li>
+					<li>
+						<%=link_to 'Products', products_path() %>
+					</li>
+				</ul>
+			</div>
+			<div id="main" class="span12">
+				<%= yield %>
+			</div>
+		</div>
+		</div>
+	</body>
+</html>
