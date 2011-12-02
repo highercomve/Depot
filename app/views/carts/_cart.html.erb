@@ -8,5 +8,6 @@
 		 	<td class="total_cell"  colspan="2"><%= number_to_currency(@cart.total_price) %></td>
 		</tr>
  	</table>
-<%= button_to 'Empty cart', cart,{:method=>'delete',:confirm =>'Are you sure?',:class=>'btn primary'} %>
+<%= button_to 'Checkout', new_order_path, method: :get, class: 'btn primary'%>
+<%= button_to 'Empty cart', cart,{:method=>'delete',:confirm =>'Are you sure?',:class=>'btn'} %>
 <% end%>
