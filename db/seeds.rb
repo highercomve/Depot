@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#for i in 1..200
+#  @order=Order.find(i)
+#  @order.destroy
+#end
+
+for i in 0..99
+  Order.create(:name=>"Usuario #{i}",:address=>"direccion #{i}",:email=>"user#{i}@loquesea.com", :pay_type => 'Check',:created_at => Time.now)
+end

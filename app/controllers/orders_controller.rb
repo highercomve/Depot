@@ -2,8 +2,9 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
-
+    require 'will_paginate/array' 
+    @orders = Order.all.paginate(:per_page => 10,:page => params[:page])
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @orders }
@@ -26,8 +27,8 @@ class OrdersController < ApplicationController
   def new
     @cart= current_cart
     if @cart.line_items.empty?
-	redirect_to store_url, notice: "Your cart is empty"
-    	return
+      redirect_to store_url, notice: "Your cart is empty"
+      return
     end
     @order = Order.new
 

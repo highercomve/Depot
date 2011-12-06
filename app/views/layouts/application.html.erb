@@ -21,15 +21,20 @@
 		<div class="container">
 		<div id="columns" class="row">
 			<div id="side" class="span4">
+				<% if @cart %>
 				<div id="cart">
 					<%= render @cart %>
 				</div>
+				<% end %>
 				<ul>
 					<li>
 						<%=link_to 'Home', '/' %>
 					</li>
 					<li>
 						<%=link_to 'Products', products_path() %>
+					</li>
+					<li>
+						<%=link_to 'Orders', orders_path() %>
 					</li>
 				</ul>
 			</div>
