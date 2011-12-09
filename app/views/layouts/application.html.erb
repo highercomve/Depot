@@ -22,21 +22,24 @@
 		<div id="columns" class="row">
 			<div id="side" class="span4">
 				<% if @cart %>
-				<div id="cart">
-					<%= render @cart %>
-				</div>
-				<% end %>
+				 	<div id="cart">
+				 		<%= render @cart %>
+				 	</div>
+			 	<% end %>
+				
 				<ul>
 					<li>
 						<%=link_to 'Home', '/' %>
 					</li>
-					<li>
-						<%=link_to 'Products', products_path() %>
-					</li>
-					<li>
-						<%=link_to 'Orders', orders_path() %>
-					</li>
 				</ul>
+				<% if session[:user_id] %>
+					<ul>
+						<li><%=link_to 'Products', products_path() %></li>
+						<li><%=link_to 'Orders', orders_path() %></li>
+						<li><%= link_to 'Users', users_path %></li>
+					</ul>
+					<%= button_to 'Logout', logout_path, method: :delete, :class=>'btn primary' %>
+				<% end %>
 			</div>
 			<div id="main" class="span12">
 				<%= yield %>
