@@ -14,7 +14,7 @@
 					<%= image_tag("http://placehold.it/200x100") %>
 				</div>
 				<div id="page_title" class="span12">				
-					<%= @page_title || "EscuelaWeb Shop Cart" %>
+					<%= @page_title || t('title') %>
 				</div>			
 			</div>
 		</div>
@@ -29,16 +29,16 @@
 				
 				<ul>
 					<li>
-						<%=link_to 'Home', '/' %>
+						<%=link_to t(:home), '/' %>
 					</li>
 				</ul>
 				<% if session[:user_id] %>
 					<ul>
-						<li><%=link_to 'Products', products_path() %></li>
-						<li><%=link_to 'Orders', orders_path() %></li>
-						<li><%= link_to 'Users', users_path %></li>
+						<li><%=link_to t(:home), products_path() %></li>
+						<li><%=link_to t(:prodcuts), orders_path() %></li>
+						<li><%= link_to t(:users), users_path %></li>
 					</ul>
-					<%= button_to 'Logout', logout_path, method: :delete, :class=>'btn primary' %>
+					<%= button_to 'logout', logout_path, method: :delete, :class=>'btn primary' %>
 				<% end %>
 			</div>
 			<div id="main" class="span12">
